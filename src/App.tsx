@@ -2,7 +2,7 @@ import StaticStationSlider from "./components/StaticStationSlider";
 import {useEffect, useState} from "react";
 import AgeSelect from "./components/AgeSelect";
 import DataUtil from "./utils/DataUtil";
-import {Avatar} from "@mui/material";
+import {Avatar, Grid} from "@mui/material";
 import RunSlider from "./components/RunSlider";
 
 
@@ -14,7 +14,6 @@ export default function App() {
     const [sitUpScore, setSitUpScore] = useState<number | number[]>(16)
     const [runValue, setRunValue] = useState<number | number[]>(780)
     const [runScore, setRunScore] = useState<number | number[]>(27)
-    const [totalValue, setTotalValue] = useState<number | number[]>(150)
     const [totalScore, setTotalScore] = useState<number | number[]>(0)
     const [award, setAward] = useState('Pass')
     const [awardColor, setAwardColor] = useState('black')
@@ -39,10 +38,6 @@ export default function App() {
     }
 
     useEffect(() => {
-        const numberPushUp = pushUpValue as number;
-        const numberSitUp = sitUpValue as number
-        const numberRunValue = runValue as number
-        setTotalValue(numberPushUp + numberSitUp + numberRunValue)
         const numberPushUpScore = pushUpScore as number;
         const numberSitUpScore = sitUpScore as number
         const numberRunScore = runScore as number
@@ -78,25 +73,64 @@ export default function App() {
     }, [totalScore]);
 
     return (
+        <Grid container spacing={2} direction="column" justifyContent="center" alignItems="center">
+            <Grid item xs={12}>
+                <h1>SAF Ippt Calculator</h1>
+            </Grid>
 
-        <div style={{
-            position: 'absolute', left: '50%', top: '38%',
-            transform: 'translate(-50%, -50%)'
-        }}>
-            <h1>SAF Ippt Calculator</h1>
-            <AgeSelect handleCallback={ageCallback} description={"Age"}/>
-            <Avatar alt="pushup" src="./src/static/images/pushup.png"/>
-            <StaticStationSlider handleCallback={pushUpCallback} description={"Push-Ups"}/>
-            <Avatar alt="pushup" src="./src/static/images/situp.png"/>
-            <StaticStationSlider handleCallback={sitUpCallback} description={"Sit-Ups"}/>
-            <Avatar alt="pushup" src="./src/static/images/run.png"/>
-            <RunSlider handleCallback={runCallback} description={"2.4KM Run"}/>
+            <Grid item xs={12}>
+                <AgeSelect handleCallback={ageCallback} description={"Age"}/>
+            </Grid>
 
-            <p>Your Push-Ups Score : {pushUpScore}</p>
-            <p>Your Sit-Ups Score : {sitUpScore}</p>
-            <p>Your Run Score : {runScore}</p>
-            <p>Your Total Score: {totalScore}</p>
-            <p style={{color: awardColor}}>Your Award: {award}</p>
-        </div>
+            <Grid item xs={12} container justifyContent="center" alignItems="center">
+                <Grid item xs={3}></Grid>
+                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./src/static/images/pushup.png"/></Grid>
+                <Grid item xs={4}>
+                    <StaticStationSlider handleCallback={pushUpCallback} description={"Push-Ups"}/>
+                </Grid>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={3}>
+                    <p>Score : {pushUpScore}</p>
+                </Grid>
+            </Grid>
+
+            <Grid item xs={12} container justifyContent="center" alignItems="center">
+                <Grid item xs={3}></Grid>
+                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./src/static/images/situp.png"/></Grid>
+                <Grid item xs={4}>
+                    <StaticStationSlider handleCallback={sitUpCallback} description={"Sit-Ups"}/>
+                </Grid>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={3}>
+                    <p>Score : {sitUpScore}</p>
+                </Grid>
+            </Grid>
+
+            <Grid item xs={12} container justifyContent="center" alignItems="center">
+                <Grid item xs={3}></Grid>
+                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./src/static/images/run.png"/></Grid>
+                <Grid item xs={4}>
+                    <RunSlider handleCallback={runCallback} description={"2.4KM Run"}/>
+                </Grid>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={3}>
+                    <p>Score : {runScore}</p>
+                </Grid>
+            </Grid>
+
+            <Grid item xs={12} container justifyContent="center" alignItems="center">
+                <Grid item xs={3}></Grid>
+                <Grid item xs={1} alignItems="right"></Grid>
+                <Grid item xs={4}>
+                    <p style={{color: awardColor}}>Your Award: {award}</p>
+                </Grid>
+                <Grid item xs={1}></Grid>
+                <Grid item xs={3}>
+                    <p>Total Score : {totalScore}</p>
+                </Grid>
+            </Grid>
+
+
+        </Grid>
     )
 }
