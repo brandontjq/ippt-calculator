@@ -84,7 +84,7 @@ export default function App() {
 
             <Grid item xs={12} container justifyContent="center" alignItems="center">
                 <Grid item xs={3}></Grid>
-                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./src/static/images/pushup.png"/></Grid>
+                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./dist/assets/run-1b373b3d.png"/></Grid>
                 <Grid item xs={4}>
                     <StaticStationSlider handleCallback={pushUpCallback} description={"Push-Ups"}/>
                 </Grid>
@@ -96,7 +96,7 @@ export default function App() {
 
             <Grid item xs={12} container justifyContent="center" alignItems="center">
                 <Grid item xs={3}></Grid>
-                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./src/static/images/situp.png"/></Grid>
+                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./dist/assets/run-1b373b3d.png"/></Grid>
                 <Grid item xs={4}>
                     <StaticStationSlider handleCallback={sitUpCallback} description={"Sit-Ups"}/>
                 </Grid>
