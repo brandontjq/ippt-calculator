@@ -75,6 +75,9 @@ export default function App() {
     return (
         <Grid container spacing={2} direction="column" justifyContent="center" alignItems="center">
             <Grid item xs={12}>
+                <h1></h1>
+            </Grid>
+            <Grid item xs={12}>
                 <h1>SAF Ippt Calculator</h1>
             </Grid>
 
@@ -83,8 +86,8 @@ export default function App() {
             </Grid>
 
             <Grid item xs={12} container justifyContent="center" alignItems="center">
-                <Grid item xs={3}></Grid>
-                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./dist/assets/run-1b373b3d.png"/></Grid>
+                <Grid item xs={2}></Grid>
+                <Grid item xs={2} alignItems="left"><Avatar alt="pushup" src="./pushup.png"/></Grid>
                 <Grid item xs={4}>
                     <StaticStationSlider handleCallback={pushUpCallback} description={"Push-Ups"}/>
                 </Grid>
@@ -95,8 +98,8 @@ export default function App() {
             </Grid>
 
             <Grid item xs={12} container justifyContent="center" alignItems="center">
-                <Grid item xs={3}></Grid>
-                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./dist/assets/run-1b373b3d.png"/></Grid>
+                <Grid item xs={2}></Grid>
+                <Grid item xs={2} alignItems="left"><Avatar alt="situps" src="./situp.png"/></Grid>
                 <Grid item xs={4}>
                     <StaticStationSlider handleCallback={sitUpCallback} description={"Sit-Ups"}/>
                 </Grid>
@@ -107,8 +110,8 @@ export default function App() {
             </Grid>
 
             <Grid item xs={12} container justifyContent="center" alignItems="center">
-                <Grid item xs={3}></Grid>
-                <Grid item xs={1} alignItems="right"><Avatar alt="pushup" src="./src/static/images/run.png"/></Grid>
+                <Grid item xs={2}></Grid>
+                <Grid item xs={2} alignItems="left"><Avatar alt="run" src="./run.png"/></Grid>
                 <Grid item xs={4}>
                     <RunSlider handleCallback={runCallback} description={"2.4KM Run"}/>
                 </Grid>
