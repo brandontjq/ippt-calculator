@@ -27,7 +27,7 @@ export default function RunSlider({description, handleCallback}: Props) {
             min={360}
             max={1200}
             step={10}
-            color="info"
+            color="success"
             aria-label="Default"
             valueLabelDisplay="auto"
             valueLabelFormat={getTime(sliderValue)}

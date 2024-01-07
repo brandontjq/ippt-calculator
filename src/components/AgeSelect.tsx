@@ -19,7 +19,7 @@ export default function AgeSelect({description, handleCallback}: Props) {
     }
 
     return (
-        <FormControl fullWidth>
+        <FormControl style={{maxHeight: 120}}>
             <InputLabel id="demo-simple-select-label">{description}</InputLabel>
             <Select
                 labelId="demo-simple-select-label"
@@ -27,6 +27,7 @@ export default function AgeSelect({description, handleCallback}: Props) {
                 value={age as unknown as string}
                 label={description}
                 onChange={handleChange}
+                style={{ minWidth: '200px', height: '50px'}}
             >
                 {
                     ages.map((age) => (

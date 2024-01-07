@@ -18,7 +18,7 @@ export default function StaticStationSlider({description, handleCallback}: Props
         <Slider
             defaultValue={30}
             max={60}
-            color="info"
+            color="success"
             aria-label="Default"
             valueLabelDisplay="auto"
             onChange={handleSliderChange}
